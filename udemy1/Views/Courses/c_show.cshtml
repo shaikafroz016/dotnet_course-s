@@ -1,0 +1,20 @@
+﻿@model  IEnumerable<udemy1.Models.Course>
+@{
+    ViewBag.Title = "c_show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>c_show</h2>
+
+
+    <table>
+        <tr><th>Course name</th></tr>
+        @foreach(var x in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(x.name,"c_details",new {Id=x.Id })
+                        </td>
+                    </tr>
+                }
+    </table>
